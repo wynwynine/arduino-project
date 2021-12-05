@@ -11,6 +11,6 @@ Void setup()
 void loop()
 {
     int reading = analogRead(potpin); // 0 to 1023
-    // 잘 채워보세요.
+    // 잘 채워보세요.... 
     servo.write(angle);
 }
