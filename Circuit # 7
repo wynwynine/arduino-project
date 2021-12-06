@@ -52,5 +52,3 @@ float getVoltage(int pin)
   return (analogRead(pin) * 0.00488759);
     //0.00488759 = 5/ 1023를 미리 계산 한 값이다.   
 }
-
-// cataclysmic

@@ -1,0 +1,12 @@
+/* TEMPERATURE SENSOR */
+const int temperaturePin = 0;
+
+void setup()
+{
+    Serial.begin(9600); // 시리얼 모니터를 사용하게 한다.
+    // 전송 속도는 9600bps로 세팅
+}
+
+...
+
+Serial.print("voltage: ");
