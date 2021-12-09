@@ -1,2 +1,0 @@
-/* RELAYS 계전기*/
-const int relayPin = 2;
