@@ -1,4 +1,4 @@
-# arduino-project
+# project-arduino
 
 7. 프로젝트 #5 –
 푸시버튼
