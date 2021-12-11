@@ -10,6 +10,7 @@ void setup()
 pinMode(motorPin, OUTPUT);
 Serial.begin(9600);
 }
+
 void loop()
 {
 //다음 함수의 주석 기호를 없애면 함수를 시험해 볼 수 있다.
@@ -18,6 +19,7 @@ void loop()
 // motorAcceleration();
 serialSpeed();
 }
+
 // 모터를 작동후 정지
 void motorOnThenOff()
 {
@@ -28,6 +30,7 @@ delay(onTime);
 digitalWrite(motorPin, LOW); // 정지
 delay(offTime);
 }
+
 // 2가지 속도로 모터 회전
 void motorOnThenOffWithSpeed()
 {
@@ -40,6 +43,7 @@ delay(Time1); // delay for onTime milliseconds
 analogWrite(motorPin, Speed2); // turns the motor Off
 delay(Time2); // delay for offTime milliseconds
 }
+
 // 점점 빠르게 점점 느리게
 void motorAcceleration()
 {
@@ -51,6 +55,7 @@ for(speed = 0; speed <= 255; speed++)
 analogWrite(motorPin,speed);
 delay(delayTime);
 }
+  
 // 점점 느리게
 for(speed = 255; speed >= 0; speed--)
 {
@@ -58,6 +63,7 @@ analogWrite(motorPin,speed); // set the new speed
 delay(delayTime); // delay between speed steps
 }
 }
+
 // 0~255 값을 시리얼 모니터로 주면 그 속도로 모터 회전
 void serialSpeed()
 {
