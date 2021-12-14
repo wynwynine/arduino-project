@@ -1,0 +1,62 @@
+/* 
+학번_final_1.h 파일에 연속한 덧셈뺄셈(++, +-, -+, --) 함수 4개를 넣고
+학번_final_1.c 파일에 각각의 사칙연산을 담당하는 함수포인터배열[4]를 만들고, 
+멤버가 double a; char op1; double b; char op2; double c인 구조체배열[2]를 만들어서
+double number 3개의 덧셈 뺄셈 2개를 각각의 구조체에 입력 받아
+ex) 4.56 + 5.394 – 23455     2.34 – 9845 + 34.55 [enter]     
+이 결과를 화면에 한 줄씩 2줄에 출력하는 코드를 작성하시오. 
+학번_final_1.c 와 학번_final_1.h 제출.
+*/
+
+#include <stdio.h>
+#include "2017314018_final_1.h"
+
+//구조체 선언
+struct S
+{
+   double a;
+   char op1;
+   double b;
+   char op2;
+   double c;
+};// 5개의 멤버
+
+void main(void)
+{
+	struct S s[2];// 구조체배열 선언
+	double (*funcP[4])(double a, char op1, double b, char op2, double c);// 함수포인터배열 선언
+	printf("ex. 4.56 + 5.394 - 23455   2.34 - 9845 + 34.55 [enter] \n");// 작성 예시
+	scanf("%lf %c %lf %c %lf", &s[0].a, &s[0].op1, &s[0].b, &s[0].op2, &s[0].c);
+	scanf("%lf %c %lf %c %lf", &s[1].a, &s[1].op1, &s[1].b, &s[1].op2, &s[1].c);
+
+	if(s[0].op1 == '+' && s[0].op2=='+'){
+		funcP[0];
+	}else if(s[0].op1 == '+' && s[0].op2=='-'){
+		funcP[1];
+	}else if(s[0].op1 == '-' && s[0].op2=='+'){
+		funcP[2];
+	}else if(s[0].op1 == '-' && s[0].op2=='-'){
+		funcP[3];
+	}else
+		printf("덧셈과 뺄셈만을 이용해주세요");
+
+	if(s[1].op1 == '+' && s[1].op2=='+'){
+		funcP[0];
+	}else if(s[1].op1 == '+' && s[1].op2=='-'){
+		funcP[1];
+	}else if(s[1].op1 == '-' && s[1].op2=='+'){
+		funcP[2];
+	}else if(s[1].op1 == '-' && s[1].op2=='-'){
+		funcP[3];
+	}else
+		printf("덧셈과 뺄셈만을 이용해주세요");
+
+	// 함수포인터배열과 헤더파일 내의 각 함수들을 연결
+	funcP[0] = pp;
+	funcP[1] = pm;
+	funcP[2] = mp;
+	funcP[3] = mm;
+	
+	printf("%lf %c %lf %c %lf \n", &s[0].a, &s[0].op1, &s[0].b, &s[0].op2, &s[0].c);
+	printf("%lf %c %lf %c %lf \n", &s[1].a, &s[1].op1, &s[1].b, &s[1].op2, &s[1].c);
+}// main()
