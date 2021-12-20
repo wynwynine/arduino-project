@@ -7,8 +7,8 @@ int lightLevel;
 
 void setup()
 {
-
 pinMode(ledPin, OUTPUT);
+  Serial.begin(9600);
 }
 
 void loop()
@@ -19,6 +19,8 @@ manualTune(); // manually change the range from light to
 dark
 
 analogWrite(ledPin, lightLevel);
+Serial.print("lightLevel=");
+  Serial.println(lightLevel);
 }
 
 void manualTune()
