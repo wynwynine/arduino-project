@@ -1,4 +1,4 @@
-*SHIFT REGISTER */
+/*SHIFT REGISTER */
 /*
 74HC595 pin LED pin Arduino pin
 1 (QB) LED 2 +
